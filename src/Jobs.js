@@ -80,7 +80,11 @@ function Jobs({ handleBookmark }) {
         <div key={job.id} className="job-card" onClick={() => handleCardClick(job)}>
           <h1>{job.title}</h1>
           <JobCard job={job} />
-          <button onClick={(e) => { e.stopPropagation(); handleBookmark(job); }}>Bookmark</button>
+          <button onClick={() => {
+            const bookmarkedJobs = JSON.parse(localStorage.getItem('bookmarkedJobs')) || [];
+            localStorage.setItem('bookmarkedJobs', JSON.stringify([...bookmarkedJobs, job]));
+            handleBookmark(job);
+          }}>Bookmark</button>
         </div>
       ))}
       {loading && <p>Loading...</p>}
