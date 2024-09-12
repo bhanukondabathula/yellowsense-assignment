@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+##Job Listing and Bookmarking App##
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React application displays job listings from an external API and allows users to bookmark jobs. The bookmarks are saved to local storage, making them accessible offline. The app features infinite scroll for job listings and supports navigating to detailed job pages.
 
-## Available Scripts
+Features
+Job Listing: Fetches jobs from an API and displays them in a card format.
+Infinite Scroll: Loads more job listings as the user scrolls down the page.
+Job Details: Clicking on a job card redirects the user to a detailed page with the job's full information.
+Bookmarking: Users can bookmark jobs by clicking the bookmark button on each job card.
+Local Storage: Bookmarked jobs are stored in the browser's local storage so that they remain available even after refreshing the page or going offline.
+Bookmarks Page: Displays a list of all bookmarked jobs, which can be accessed even offline.
 
-In the project directory, you can run:
+Components
+Jobs: Displays the list of jobs with infinite scrolling and bookmark functionality.
+JobCard: Displays the job details in a card format and is clickable to view more information.
+Bookmarks: Shows the list of bookmarked jobs stored in local storage.
 
-### `npm start`
+Setup Instructions
+Prerequisites
+Node.js (v12.x or higher)
+NPM or Yarn
+Installation
+Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash```
+git clone https://github.com/yourusername/job-bookmark-app.git
+cd job-bookmark-app
+Install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash````
+npm install
+Start the development server:
 
-### `npm test`
+```bash```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm start
+Open the app in the browser at http://localhost:3000.
 
-### `npm run build`
+API Usage
+The app fetches job data from the following API:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+arduino
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://testapi.getlokalapp.com/common/jobs
+The job details shown in the app include:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Title
+Place
+Job Type
+Experience
+Fees Charged
+Qualification
+Local Storage
+Bookmarked jobs are saved in the browser's local storage under the key bookmarkedJobs. When the app is loaded, bookmarked jobs are retrieved from local storage and displayed in the "Bookmarks" page. Even if the page is refreshed, the bookmarks persist.
 
-### `npm run eject`
+Functionality Overview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Jobs Component
+Fetches job data from the API.
+Displays the job data in a list format using infinite scrolling.
+The bookmark button on each job card saves the job to local storage.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+JobCard Component
+Displays individual job information.
+Bookmarks Component
+Displays all bookmarked jobs.
+Retrieves bookmarked jobs from local storage and displays them.
+If no jobs are bookmarked, shows a message indicating that no jobs have been bookmarked yet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##deployment link
+https://yellowsense-assignment.netlify.app/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
